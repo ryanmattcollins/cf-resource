@@ -40,7 +40,7 @@ func (cf *CloudFoundry) PushApp(manifest string, path string, currentAppName str
 	args := []string{}
 
 	if currentAppName == "" {
-		args = append(args, "push", "-f", manifest)
+		args = append(args, "v2-push", "-f", manifest)
 	} else {
 		args = append(args, "zero-downtime-push", currentAppName, "-f", manifest)
 	}
